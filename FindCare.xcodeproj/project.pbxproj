@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXFileReference section */
@@ -94,7 +94,7 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					9CCB85E82D7CBD4900DE8D5F = {
-						CreatedOnToolsVersion = 15.4;
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
@@ -107,7 +107,7 @@
 			);
 			mainGroup = 9CCB85E02D7CBD4900DE8D5F;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 48;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 9CCB85EA2D7CBD4900DE8D5F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -244,7 +244,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
