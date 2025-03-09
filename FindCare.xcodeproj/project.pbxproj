@@ -94,7 +94,7 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					9CCB85E82D7CBD4900DE8D5F = {
-						CreatedOnToolsVersion = 16.2;
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -107,7 +107,7 @@
 			);
 			mainGroup = 9CCB85E02D7CBD4900DE8D5F;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 48;
 			productRefGroup = 9CCB85EA2D7CBD4900DE8D5F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
