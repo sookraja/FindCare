@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,10 @@
 		9CCB85E92D7CBD4900DE8D5F /* FindCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1AFA2CF32D7E771A0008FBBD /* Special Controllers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Special Controllers"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		9CCB85E62D7CBD4900DE8D5F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -40,6 +44,7 @@
 		9C6D51222D7E665B00E4D02A /* FindCare */ = {
 			isa = PBXGroup;
 			children = (
+				1AFA2CF32D7E771A0008FBBD /* Special Controllers */,
 				9C6D51192D7E665B00E4D02A /* AppDelegate.swift */,
 				9C6D511A2D7E665B00E4D02A /* Assets.xcassets */,
 				9C6D511B2D7E665B00E4D02A /* Info.plist */,
@@ -81,6 +86,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1AFA2CF32D7E771A0008FBBD /* Special Controllers */,
 			);
 			name = FindCare;
 			packageProductDependencies = (
