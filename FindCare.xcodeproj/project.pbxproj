@@ -28,6 +28,8 @@
 		CE90C5F62D89BE750075D1BA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C5F52D89BE750075D1BA /* MapViewController.swift */; };
 		9CA249632D8223CC003117FC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9CA249622D8223C4003117FC /* .gitignore */; };
 		9CB3C2BE2D88886300893C65 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9CB3C2BC2D88886300893C65 /* Localizable.xcstrings */; };
+		9C6D513E2D7E6FC900E4D02A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C6D511B2D7E665B00E4D02A /* Info.plist */; };
+		CE7E1CCB2D7FCBD20072D5B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE7E1CCA2D7FCBD20072D5B8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
