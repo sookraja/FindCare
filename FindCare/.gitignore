@@ -1,0 +1,9 @@
+//
+//  .gitignore
+//  FindCare
+//
+//  Created by Annette Sookraj on 2025-03-12.
+//
+
+// Mac
+.DS_Store
