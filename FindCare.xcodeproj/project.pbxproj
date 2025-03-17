@@ -14,6 +14,7 @@
 		9C6D51282D7E665B00E4D02A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6D511D2D7E665B00E4D02A /* LaunchScreen.storyboard */; };
 		9C6D51292D7E665B00E4D02A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6D511F2D7E665B00E4D02A /* Main.storyboard */; };
 		9CA249632D8223CC003117FC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9CA249622D8223C4003117FC /* .gitignore */; };
+		9CB3C2BE2D88886300893C65 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9CB3C2BC2D88886300893C65 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,15 @@
 		9C6D51202D7E665B00E4D02A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9C6D51212D7E665B00E4D02A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9CA249622D8223C4003117FC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9CB3C2B12D88831400893C65 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9CB3C2B22D88831400893C65 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Main.strings"; sourceTree = "<group>"; };
+		9CB3C2B32D88832900893C65 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9CB3C2B42D88832900893C65 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		9CB3C2B52D88833300893C65 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9CB3C2B62D88833300893C65 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Main.strings"; sourceTree = "<group>"; };
+		9CB3C2BC2D88886300893C65 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9CB3C2BF2D88888D00893C65 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9CB3C2C02D88888D00893C65 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		9CCB85E92D7CBD4900DE8D5F /* FindCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -42,6 +52,7 @@
 		9C6D51222D7E665B00E4D02A /* FindCare */ = {
 			isa = PBXGroup;
 			children = (
+				9CB3C2BD2D88886300893C65 /* Resources */,
 				9CA249622D8223C4003117FC /* .gitignore */,
 				9C6D51192D7E665B00E4D02A /* AppDelegate.swift */,
 				9C6D511A2D7E665B00E4D02A /* Assets.xcassets */,
@@ -52,6 +63,14 @@
 				9C6D51212D7E665B00E4D02A /* ViewController.swift */,
 			);
 			path = FindCare;
+			sourceTree = "<group>";
+		};
+		9CB3C2BD2D88886300893C65 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9CB3C2BC2D88886300893C65 /* Localizable.xcstrings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9CCB85E02D7CBD4900DE8D5F = {
@@ -114,6 +133,10 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-GB",
+				es,
+				"fr-CA",
+				fr,
 			);
 			mainGroup = 9CCB85E02D7CBD4900DE8D5F;
 			minimizedProjectReferenceProxies = 1;
@@ -132,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA249632D8223CC003117FC /* .gitignore in Resources */,
+				9CB3C2BE2D88886300893C65 /* Localizable.xcstrings in Resources */,
 				9C6D51262D7E665B00E4D02A /* Assets.xcassets in Resources */,
 				9C6D51282D7E665B00E4D02A /* LaunchScreen.storyboard in Resources */,
 				9C6D51292D7E665B00E4D02A /* Main.storyboard in Resources */,
@@ -158,6 +182,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				9C6D511C2D7E665B00E4D02A /* Base */,
+				9CB3C2B12D88831400893C65 /* en-GB */,
+				9CB3C2B32D88832900893C65 /* es */,
+				9CB3C2B52D88833300893C65 /* fr-CA */,
+				9CB3C2BF2D88888D00893C65 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,6 +194,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				9C6D511E2D7E665B00E4D02A /* Base */,
+				9CB3C2B22D88831400893C65 /* en-GB */,
+				9CB3C2B42D88832900893C65 /* es */,
+				9CB3C2B62D88833300893C65 /* fr-CA */,
+				9CB3C2C02D88888D00893C65 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -234,6 +266,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -288,6 +321,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -297,6 +331,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -344,6 +379,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
