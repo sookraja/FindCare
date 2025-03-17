@@ -13,24 +13,33 @@
 		9C6D51262D7E665B00E4D02A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C6D511A2D7E665B00E4D02A /* Assets.xcassets */; };
 		9C6D51282D7E665B00E4D02A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6D511D2D7E665B00E4D02A /* LaunchScreen.storyboard */; };
 		9C6D51292D7E665B00E4D02A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C6D511F2D7E665B00E4D02A /* Main.storyboard */; };
-		9C6D513E2D7E6FC900E4D02A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C6D511B2D7E665B00E4D02A /* Info.plist */; };
+		CE7955932D8F7BA10080F31B /* Level-1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7955922D8F7BA00080F31B /* Level-1.png */; };
+		CE7955952D8F7BA60080F31B /* Level-2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7955942D8F7BA60080F31B /* Level-2.png */; };
+		CE7955972D8F7BAB0080F31B /* Level-3.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7955962D8F7BAB0080F31B /* Level-3.png */; };
+		CE7955992D8F7ED20080F31B /* IndoorMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7955982D8F7ED20080F31B /* IndoorMapView.swift */; };
 		CE7E1CCB2D7FCBD20072D5B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE7E1CCA2D7FCBD20072D5B8 /* GoogleService-Info.plist */; };
 		CE7E1CCF2D7FCFE10072D5B8 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CCE2D7FCFE10072D5B8 /* FirebaseCore */; };
 		CE7E1CD52D87E2C50072D5B8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD42D87E2C50072D5B8 /* FirebaseDatabase */; };
 		CE7E1CD72D87E41F0072D5B8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD62D87E41F0072D5B8 /* FirebaseFirestore */; };
 		CE7E1CD92D87E5950072D5B8 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD82D87E5950072D5B8 /* FirebaseFirestoreCombine-Community */; };
+		CE90C5F62D89BE750075D1BA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C5F52D89BE750075D1BA /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9C6D51192D7E665B00E4D02A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C6D511A2D7E665B00E4D02A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9C6D511B2D7E665B00E4D02A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C6D511C2D7E665B00E4D02A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C6D511E2D7E665B00E4D02A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C6D51202D7E665B00E4D02A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9C6D51212D7E665B00E4D02A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9CCB85E92D7CBD4900DE8D5F /* FindCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7955922D8F7BA00080F31B /* Level-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-1.png"; sourceTree = "<group>"; };
+		CE7955942D8F7BA60080F31B /* Level-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-2.png"; sourceTree = "<group>"; };
+		CE7955962D8F7BAB0080F31B /* Level-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-3.png"; sourceTree = "<group>"; };
+		CE7955982D8F7ED20080F31B /* IndoorMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndoorMapView.swift; sourceTree = "<group>"; };
 		CE7E1CCA2D7FCBD20072D5B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE90C5F52D89BE750075D1BA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CEF9800A2D87F671003F8A8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,14 +60,17 @@
 		9C6D51222D7E665B00E4D02A /* FindCare */ = {
 			isa = PBXGroup;
 			children = (
+				CE7955912D8F7B8C0080F31B /* Images */,
 				9C6D51192D7E665B00E4D02A /* AppDelegate.swift */,
 				9C6D511A2D7E665B00E4D02A /* Assets.xcassets */,
-				9C6D511B2D7E665B00E4D02A /* Info.plist */,
 				CE7E1CCA2D7FCBD20072D5B8 /* GoogleService-Info.plist */,
+				CEF9800A2D87F671003F8A8F /* Info.plist */,
 				9C6D511D2D7E665B00E4D02A /* LaunchScreen.storyboard */,
 				9C6D511F2D7E665B00E4D02A /* Main.storyboard */,
 				9C6D51202D7E665B00E4D02A /* SceneDelegate.swift */,
 				9C6D51212D7E665B00E4D02A /* ViewController.swift */,
+				CE90C5F52D89BE750075D1BA /* MapViewController.swift */,
+				CE7955982D8F7ED20080F31B /* IndoorMapView.swift */,
 			);
 			path = FindCare;
 			sourceTree = "<group>";
@@ -78,6 +90,16 @@
 				9CCB85E92D7CBD4900DE8D5F /* FindCare.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CE7955912D8F7B8C0080F31B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CE7955922D8F7BA00080F31B /* Level-1.png */,
+				CE7955942D8F7BA60080F31B /* Level-2.png */,
+				CE7955962D8F7BAB0080F31B /* Level-3.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		CE7E1CCD2D7FCFE00072D5B8 /* Frameworks */ = {
@@ -155,11 +177,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C6D513E2D7E6FC900E4D02A /* Info.plist in Resources */,
+				CE7955972D8F7BAB0080F31B /* Level-3.png in Resources */,
 				9C6D51262D7E665B00E4D02A /* Assets.xcassets in Resources */,
 				CE7E1CCB2D7FCBD20072D5B8 /* GoogleService-Info.plist in Resources */,
 				9C6D51282D7E665B00E4D02A /* LaunchScreen.storyboard in Resources */,
+				CE7955952D8F7BA60080F31B /* Level-2.png in Resources */,
 				9C6D51292D7E665B00E4D02A /* Main.storyboard in Resources */,
+				CE7955932D8F7BA10080F31B /* Level-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,9 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7955992D8F7ED20080F31B /* IndoorMapView.swift in Sources */,
 				9C6D51232D7E665B00E4D02A /* AppDelegate.swift in Sources */,
 				9C6D51242D7E665B00E4D02A /* SceneDelegate.swift in Sources */,
 				9C6D51252D7E665B00E4D02A /* ViewController.swift in Sources */,
+				CE90C5F62D89BE750075D1BA /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +238,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -240,7 +266,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
