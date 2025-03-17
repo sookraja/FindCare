@@ -31,6 +31,9 @@
 		9C6D513E2D7E6FC900E4D02A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C6D511B2D7E665B00E4D02A /* Info.plist */; };
 		CE7E1CCB2D7FCBD20072D5B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE7E1CCA2D7FCBD20072D5B8 /* GoogleService-Info.plist */; };
 		CE7E1CCF2D7FCFE10072D5B8 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CCE2D7FCFE10072D5B8 /* FirebaseCore */; };
+		CE7E1CD52D87E2C50072D5B8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD42D87E2C50072D5B8 /* FirebaseDatabase */; };
+		CE7E1CD72D87E41F0072D5B8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD62D87E41F0072D5B8 /* FirebaseFirestore */; };
+		CE7E1CD92D87E5950072D5B8 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD82D87E5950072D5B8 /* FirebaseFirestoreCombine-Community */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
