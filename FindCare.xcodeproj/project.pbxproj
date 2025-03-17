@@ -34,6 +34,9 @@
 		CE7E1CD52D87E2C50072D5B8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD42D87E2C50072D5B8 /* FirebaseDatabase */; };
 		CE7E1CD72D87E41F0072D5B8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD62D87E41F0072D5B8 /* FirebaseFirestore */; };
 		CE7E1CD92D87E5950072D5B8 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD82D87E5950072D5B8 /* FirebaseFirestoreCombine-Community */; };
+		CE90C5F62D89BE750075D1BA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C5F52D89BE750075D1BA /* MapViewController.swift */; };
+		9CA249632D8223CC003117FC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9CA249622D8223C4003117FC /* .gitignore */; };
+		9CB3C2BE2D88886300893C65 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9CB3C2BC2D88886300893C65 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

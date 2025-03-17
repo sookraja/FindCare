@@ -617,15 +617,19 @@
                 <exit id="sXB-Ng-L2v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <point key="canvasLocation" x="1408" y="-27"/>
 =======
             <point key="canvasLocation" x="1014.5038167938931" y="3.5211267605633805"/>
 >>>>>>> e2f0fa4 (More Fixes)
+=======
+            <point key="canvasLocation" x="1408" y="-27"/>
+>>>>>>> 539cf33 (Some very basic Firebase functionality just to prove that it works. It can take a department for the Firebase database and print the name of the department)
         </scene>
     </scenes>
     <resources>
+        <image name="CapstoneBuilding" width="3780" height="2869"/>
         <image name="FindCare" width="1024" height="1024"/>
-        <image name="M Building" width="2095" height="1001"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
