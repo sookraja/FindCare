@@ -18,12 +18,12 @@ public class NavigationService {
     @Autowired
     private AStarPathFinding aStarPathfinding;
 
-    public List<Node> getShortestPath(String startId, String endId) {
+    public List<Node> getShortestPath(String startId, String endId, boolean accessibleOnly) {
         Optional<Node> start = nodeRepository.findById(startId);
         Optional<Node> end = nodeRepository.findById(endId);
 
         if (start.isPresent() && end.isPresent()) {
-            return aStarPathfinding.findPath(start.get(), end.get());
+            return aStarPathfinding.findPath(start.get(), end.get(), accessibleOnly);
         }
         return List.of();
     }

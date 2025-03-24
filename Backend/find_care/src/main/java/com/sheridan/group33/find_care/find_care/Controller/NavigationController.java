@@ -23,10 +23,10 @@ public class NavigationController {
     private static final Logger logger = Logger.getLogger(NavigationController.class.getName());
 
     @GetMapping("/route")
-    public List<Node> getRoute(@RequestParam String start, @RequestParam String end) {
+    public List<Node> getRoute(@RequestParam String start, @RequestParam String end, @RequestParam boolean accessibleOnly) {
         logger.log(Level.INFO, "Received request to get route from {0} to {1}", new Object[]{start, end});
 
-        List<Node> route = navigationService.getShortestPath(start, end);
+        List<Node> route = navigationService.getShortestPath(start, end, accessibleOnly);
         logger.log(Level.INFO, "Route found: {0}", route);
         
         return route;

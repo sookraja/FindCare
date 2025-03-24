@@ -22,6 +22,8 @@ public class Edge {
 
     private double weight; // Distance or time cost
 
+    private boolean accessible;
+    
     public Edge() {
     }
 
@@ -56,6 +58,14 @@ public class Edge {
 
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public boolean isAccessible() {
+        return accessible;
+    }
+
+    public void setAccessible(boolean accessible) {
+        this.accessible = accessible;
     }
     
 }

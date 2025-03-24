@@ -18,7 +18,7 @@ public class AStarPathFinding {
         return Math.sqrt(Math.pow(a.getX() - b.getX(), 2) + Math.pow(a.getY() - b.getY(), 2));
     }
 
-    public List<Node> findPath(Node start, Node goal) {
+    public List<Node> findPath(Node start, Node goal, boolean accessibleOnly) {
         Map<Node, Double> fScore = new HashMap<>(); // Declare fScore map here
         PriorityQueue<Node> openSet = new PriorityQueue<>(Comparator.comparingDouble(n -> fScore.getOrDefault(n, Double.MAX_VALUE)));
         Map<Node, Node> cameFrom = new HashMap<>();
@@ -27,23 +27,46 @@ public class AStarPathFinding {
         gScore.put(start, 0.0);
         fScore.put(start, heuristic(start, goal));
         openSet.add(start);
-
-        while (!openSet.isEmpty()) {
-            Node current = openSet.poll();
-            if (current.equals(goal)) return reconstructPath(cameFrom, current);
-
-            for (Edge edge : current.getEdges()) {
-                Node neighbor = edge.getToNode();
-                double tentativeGScore = gScore.getOrDefault(current, Double.MAX_VALUE) + edge.getWeight();
-
-                if (tentativeGScore < gScore.getOrDefault(neighbor, Double.MAX_VALUE)) {
-                    cameFrom.put(neighbor, current);
-                    gScore.put(neighbor, tentativeGScore);
-                    fScore.put(neighbor, tentativeGScore + heuristic(neighbor, goal));
-                    openSet.add(neighbor);
+        if(accessibleOnly == false){
+            while (!openSet.isEmpty()) {
+                Node current = openSet.poll();
+                if (current.equals(goal)) return reconstructPath(cameFrom, current);
+                
+                for (Edge edge : current.getEdges()) {
+                    Node neighbor = edge.getToNode();
+                    double tentativeGScore = gScore.getOrDefault(current, Double.MAX_VALUE) + edge.getWeight();
+                    
+                    if (tentativeGScore < gScore.getOrDefault(neighbor, Double.MAX_VALUE)) {
+                        cameFrom.put(neighbor, current);
+                        gScore.put(neighbor, tentativeGScore);
+                        fScore.put(neighbor, tentativeGScore + heuristic(neighbor, goal));
+                        openSet.add(neighbor);
+                    }
                 }
             }
         }
+        else if(accessibleOnly == true){
+            while (!openSet.isEmpty()) {
+                Node current = openSet.poll();
+                if (current.equals(goal)) return reconstructPath(cameFrom, current);
+                
+                for (Edge edge : current.getEdges()) {
+                    if(edge.isAccessible()==false){
+                        continue;
+                    }
+                    Node neighbor = edge.getToNode();
+                    double tentativeGScore = gScore.getOrDefault(current, Double.MAX_VALUE) + edge.getWeight();
+                    
+                    if (tentativeGScore < gScore.getOrDefault(neighbor, Double.MAX_VALUE)) {
+                        cameFrom.put(neighbor, current);
+                        gScore.put(neighbor, tentativeGScore);
+                        fScore.put(neighbor, tentativeGScore + heuristic(neighbor, goal));
+                        openSet.add(neighbor);
+                    }
+                }
+            }
+        }            
+
         return Collections.emptyList(); // No path found
     }
 

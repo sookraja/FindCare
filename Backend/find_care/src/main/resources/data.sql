@@ -14,7 +14,8 @@ CREATE TABLE IF NOT EXISTS edge (
     id INT AUTO_INCREMENT PRIMARY KEY,
     from_node_id VARCHAR(50) NOT NULL,
     to_node_id VARCHAR(50) NOT NULL,
-    weight DOUBLE NOT NULL,       -- Distance or time cost
+    weight DOUBLE NOT NULL,
+    accessible BOOLEAN NOT NULL,       -- Distance or time cost
     FOREIGN KEY (from_node_id) REFERENCES node(id),
     FOREIGN KEY (to_node_id) REFERENCES node(id)
 );      
@@ -34,17 +35,17 @@ INSERT INTO node (id, x, y, floor) VALUES
     ('Room202', 30, 10, 2);
 
 -- Insert sample edges (Paths) - Bi-directional
-INSERT INTO edge (from_node_id, to_node_id, weight) VALUES 
-    ('Entrance', 'Reception', 10), ('Reception', 'Entrance', 10),
-    ('Reception', 'HallwayA', 10), ('HallwayA', 'Reception', 10),
-    ('HallwayA', 'Room101', 7), ('Room101', 'HallwayA', 7),
-    ('HallwayA', 'Room102', 10), ('Room102', 'HallwayA', 10),
-    ('HallwayA', 'Stairs', 5), ('Stairs', 'HallwayA', 5),
-    ('HallwayA', 'Elevator', 10), ('Elevator', 'HallwayA', 10),
-    ('Stairs', 'HallwayB', 2), ('HallwayB', 'Stairs', 2),  -- Stairs leading to Floor 2
-    ('Elevator', 'HallwayB', 10), ('HallwayB', 'Elevator', 10),  -- Slower than stairs
-    ('HallwayB', 'Room201', 7), ('Room201', 'HallwayB', 7),
-    ('HallwayB', 'Room202', 10), ('Room202', 'HallwayB', 10),
-    ('HallwayA', 'Cafeteria', 15), ('Cafeteria', 'HallwayA', 15);
+INSERT INTO edge (from_node_id, to_node_id, weight, accessible) VALUES 
+    ('Entrance', 'Reception', 10, TRUE), ('Reception', 'Entrance', 10, TRUE),
+    ('Reception', 'HallwayA', 10, TRUE), ('HallwayA', 'Reception', 10, TRUE),
+    ('HallwayA', 'Room101', 7, TRUE), ('Room101', 'HallwayA', 7, TRUE),
+    ('HallwayA', 'Room102', 10, TRUE), ('Room102', 'HallwayA', 10, TRUE),
+    ('HallwayA', 'Stairs', 5, FALSE), ('Stairs', 'HallwayA', 5, FALSE),
+    ('HallwayA', 'Elevator', 10, TRUE), ('Elevator', 'HallwayA', 10, TRUE),
+    ('Stairs', 'HallwayB', 2, FALSE), ('HallwayB', 'Stairs', 2, FALSE),  -- Stairs leading to Floor 2
+    ('Elevator', 'HallwayB', 10, TRUE), ('HallwayB', 'Elevator', 10, TRUE),  -- Slower than stairs
+    ('HallwayB', 'Room201', 7, TRUE), ('Room201', 'HallwayB', 7, TRUE),
+    ('HallwayB', 'Room202', 10, TRUE), ('Room202', 'HallwayB', 10, TRUE),
+    ('HallwayA', 'Cafeteria', 15, TRUE), ('Cafeteria', 'HallwayA', 15,TRUE);
 
 
