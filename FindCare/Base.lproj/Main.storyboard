@@ -313,7 +313,7 @@
                                 <rect key="frame" x="0.0" y="138" width="393" height="490"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CapstoneBuilding" translatesAutoresizingMaskIntoConstraints="NO" id="pV0-HP-dDw">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="M Building" translatesAutoresizingMaskIntoConstraints="NO" id="pV0-HP-dDw">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="490"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -321,26 +321,26 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="6Us-g1-W3t"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="JeD-9A-TM1"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKC-xe-AEY">
-                                <rect key="frame" x="16" y="636" width="87" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Zoom In"/>
-                                <connections>
-                                    <action selector="zoomInButtonTapped:" destination="Scf-xe-iye" eventType="touchUpInside" id="xgc-fF-l9x"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lr-dZ-EJb">
-                                <rect key="frame" x="122" y="636" width="101" height="35"/>
+                                <rect key="frame" x="69" y="95" width="32" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Zoom Out"/>
+                                <buttonConfiguration key="configuration" style="filled" title="-" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="zoomOutButtonTapped:" destination="Scf-xe-iye" eventType="touchUpInside" id="WMd-EK-xp4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKC-xe-AEY">
+                                <rect key="frame" x="16" y="95" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="+" cornerStyle="capsule"/>
+                                <connections>
+                                    <action selector="zoomInButtonTapped:" destination="Scf-xe-iye" eventType="touchUpInside" id="xgc-fF-l9x"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ui-Kd-O7b">
-                                <rect key="frame" x="256" y="636" width="68" height="35"/>
+                                <rect key="frame" x="309" y="95" width="68" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Reset"/>
@@ -349,21 +349,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QR9-Gc-l8c">
-                                <rect key="frame" x="228" y="748" width="75" height="35"/>
+                                <rect key="frame" x="140" y="645" width="112" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Rotate Map"/>
                                 <connections>
                                     <action selector="rotateClockwiseButtonTapped:" destination="Scf-xe-iye" eventType="touchUpInside" id="xyQ-8C-Lck"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDS-df-RAe">
-                                <rect key="frame" x="87" y="748" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <action selector="rotateCounterclockwiseButtonTapped:" destination="Scf-xe-iye" eventType="touchDragInside" id="1zt-tt-ffe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -377,12 +368,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ybw-FQ-1lb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="4"/>
+            <point key="canvasLocation" x="1014.5038167938931" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
-        <image name="CapstoneBuilding" width="3780" height="2869"/>
         <image name="FindCare" width="1024" height="1024"/>
+        <image name="M Building" width="2095" height="1001"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
