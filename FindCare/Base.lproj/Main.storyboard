@@ -44,7 +44,11 @@
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
                                                 <connections>
+<<<<<<< HEAD
                                                     <segue destination="Cyv-IF-9gB" kind="presentation" modalPresentationStyle="fullScreen" id="OYu-PR-tHa"/>
+=======
+                                                    <segue destination="Cyv-IF-9gB" kind="presentation" id="OYu-PR-tHa"/>
+>>>>>>> fc99588 (UI Improvements)
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -397,15 +401,124 @@
             <objects>
                 <viewController id="Cyv-IF-9gB" customClass="HelpScreenViewController" customModule="FindCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7kf-qy-Tqv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bn9-tJ-Eda">
+                                <rect key="frame" x="0.0" y="37" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Hellp &amp; Support" id="g7d-6a-l7z">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Brl-YG-yla">
+                                            <connections>
+                                                <action selector="unwindToSettingsFor:towards:" destination="Cyv-IF-9gB" id="Kfz-dr-w9Y"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhE-KS-EIh">
+                                <rect key="frame" x="16" y="124" width="361" height="625"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12u-FF-Wwz">
+                                        <rect key="frame" x="8" y="18" width="343" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xsz-dQ-7Ij">
+                                                <rect key="frame" x="0.0" y="-5" width="343" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqd-kU-Tu4">
+                                                        <rect key="frame" x="21" y="17" width="91" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ax-JA-TWK">
+                                                        <rect key="frame" x="287" y="5" width="48" height="47"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain">
+                                                            <imageReference key="image" image="chevron.right" catalog="system" variableValue="1"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            </preferredSymbolConfiguration>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jYd-Nb-xMH">
+                                        <rect key="frame" x="8" y="76" width="345" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yhg-eF-G6Y">
+                                                <rect key="frame" x="0.0" y="1" width="345" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0f-Et-Zu3">
+                                                <rect key="frame" x="21" y="17" width="77" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEB-6v-74g">
+                                                <rect key="frame" x="289" y="5" width="48" height="47"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <imageReference key="image" image="chevron.right" catalog="system" variableValue="1"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    </preferredSymbolConfiguration>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Frequently Asked Questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyC-nW-PEw">
+                                        <rect key="frame" x="29" y="168" width="279" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCl-9m-smI">
+                                        <rect key="frame" x="29" y="219" width="292" height="293"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7xo-vp-fp6"/>
                         <color key="backgroundColor" red="0.38431372549999998" green="0.43529411759999997" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXn-HC-a13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="IBP-vM-BFe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="799"/>
+            <point key="canvasLocation" x="677.0992366412213" y="798.59154929577471"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -537,7 +650,10 @@
                         <color key="backgroundColor" red="0.30196078431372547" green="0.36470588235294116" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
+<<<<<<< HEAD
                         <outlet property="departmentLabel" destination="89n-YG-bgS" id="lBQ-3n-oTe"/>
+=======
+>>>>>>> fc99588 (UI Improvements)
                         <segue destination="RJW-rM-rm8" kind="unwind" unwindAction="unwindToMainFor:towards:" id="j2P-3C-w8B"/>
                         <segue destination="sXB-Ng-L2v" kind="unwind" unwindAction="unwindToMainFor:towards:" id="tOH-Ao-P4a"/>
                     </connections>
