@@ -213,6 +213,21 @@
             </objects>
             <point key="canvasLocation" x="81.679389312977094" y="798.59154929577471"/>
         </scene>
+        <!--Help Screen View Controller-->
+        <scene sceneID="iWd-if-8o9">
+            <objects>
+                <viewController id="Cyv-IF-9gB" customClass="HelpScreenViewController" customModule="FindCare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7kf-qy-Tqv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7xo-vp-fp6"/>
+                        <color key="backgroundColor" red="0.38431372549999998" green="0.43529411759999997" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wXn-HC-a13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015" y="799"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
