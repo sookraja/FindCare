@@ -9,6 +9,24 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
+struct DBStaff : Codable {
+    let staffId: Int
+    let firstName: String?
+    let lastName: String?
+    let phoneNumber: String?
+    let role: String?
+    let email: String?
+    
+    enum CodingKeys: String, CodingKey {
+            case staffId = "id"
+            case firstName = "first_name"
+            case lastName = "last_name"
+            case phoneNumber = "phone_number"
+            case role
+            case email
+        }
+}
+
 struct DBDepartment : Codable {
     let departmentId: String
     let name: String?
@@ -116,4 +134,3 @@ class ViewController: UIViewController {
 
 
 }
-
