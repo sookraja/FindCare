@@ -15,8 +15,10 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func unwindToMain(for unwindSegue: UIStoryboardSegue, towards ViewController: UIViewController) {
+    
+    @IBAction func unwindToSettings(_ unwindSegue: UIStoryboardSegue) {
+        if let sourceVC = unwindSegue.source as? HelpScreenViewController {
+        }
     }
 
 }

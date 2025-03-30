@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     }()
     
     private let db = Firestore.firestore()
-
+    
     private let departmentCollection = Firestore.firestore().collection("Departments")
     
     private func departmentDocument(departmentId: String) -> DocumentReference{
@@ -131,6 +131,10 @@ class ViewController: UIViewController {
         testFirestoreConnection()
         fetchDepartment(departmentId: "LWk9SF7uf7Smp0eyBv3w")
     }
-
-
+    
+    @IBAction func unwindToMain(_ unwindSegue: UIStoryboardSegue) {
+        if let sourceVC = unwindSegue.source as? SettingsViewController {
+        } else if let sourceVC = unwindSegue.source as? MyMapViewController {
+        }
+    }
 }

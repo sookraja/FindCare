@@ -234,7 +234,7 @@
                                 <color key="backgroundColor" red="0.16470588235294117" green="0.1764705882352941" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBu-zf-Gsn">
-                                <rect key="frame" x="0.0" y="37" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="46" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.16470588235294117" green="0.1764705882352941" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -248,7 +248,7 @@
                                     <navigationItem title="Settings Page" id="5Su-2Q-U8x">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="bKJ-vh-ghJ">
                                             <connections>
-                                                <action selector="unwindToMainFor:towards:" destination="RG0-PG-v6e" id="j4l-Va-Cky"/>
+                                                <segue destination="RJW-rM-rm8" kind="unwind" unwindAction="unwindToMain:" id="AZ3-dw-Ncj"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -259,9 +259,6 @@
                         <color key="backgroundColor" red="0.30196078431372547" green="0.36470588235294116" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="CyE-k6-6Aa"/>
-                    <connections>
-                        <segue destination="IBP-vM-BFe" kind="unwind" unwindAction="unwindToSettingsFor:towards:" id="a69-Kr-908"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHq-IO-6AB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="RJW-rM-rm8" userLabel="Exit" sceneMemberID="exit"/>
@@ -276,27 +273,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bn9-tJ-Eda">
-                                <rect key="frame" x="0.0" y="37" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <textAttributes key="largeTitleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Hellp &amp; Support" id="g7d-6a-l7z">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Brl-YG-yla">
-                                            <connections>
-                                                <action selector="unwindToSettingsFor:towards:" destination="Cyv-IF-9gB" id="Kfz-dr-w9Y"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhE-KS-EIh">
                                 <rect key="frame" x="16" y="124" width="361" height="625"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -382,6 +358,27 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bn9-tJ-Eda">
+                                <rect key="frame" x="0.0" y="49" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Help &amp; Support" id="g7d-6a-l7z">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Brl-YG-yla">
+                                            <connections>
+                                                <segue destination="IBP-vM-BFe" kind="unwind" unwindAction="unwindToSettings:" id="wP9-RA-pCp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7xo-vp-fp6"/>
                         <color key="backgroundColor" red="0.38431372549999998" green="0.43529411759999997" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -523,8 +520,6 @@
                     </view>
                     <connections>
                         <outlet property="departmentLabel" destination="89n-YG-bgS" id="lBQ-3n-oTe"/>
-                        <segue destination="RJW-rM-rm8" kind="unwind" unwindAction="unwindToMainFor:towards:" id="j2P-3C-w8B"/>
-                        <segue destination="sXB-Ng-L2v" kind="unwind" unwindAction="unwindToMainFor:towards:" id="tOH-Ao-P4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -612,6 +607,27 @@
                                     <action selector="rotateCounterclockwiseButtonTapped:" destination="Scf-xe-iye" eventType="touchDragInside" id="1zt-tt-ffe"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byw-43-J6Y">
+                                <rect key="frame" x="0.0" y="51" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.1647058824" green="0.1764705882" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Map" id="u8T-HF-lrz">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Ug3-o5-AmA">
+                                            <connections>
+                                                <segue destination="sXB-Ng-L2v" kind="unwind" unwindAction="unwindToMain:" id="bdA-XM-VHR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JWA-4T-F9c"/>
                         <color key="backgroundColor" red="0.30196078430000001" green="0.36470588240000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

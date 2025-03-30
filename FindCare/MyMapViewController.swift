@@ -15,16 +15,16 @@ class MyMapViewController: UIViewController, UIScrollViewDelegate {
     
     
     private var currentRotationIndex: Int = 0
- 
+    
     private let rotationAngles: [CGFloat] = [0, CGFloat.pi/2, CGFloat.pi, 3 * CGFloat.pi/2]
     
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
     }
     
-   
+    
     private func setupScrollView() {
         // Basic scroll view setup
         scrollView.delegate = self
@@ -82,7 +82,7 @@ class MyMapViewController: UIViewController, UIScrollViewDelegate {
         mapImageView.transform = .identity
     }
     
-
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mapImageView
     }
@@ -101,7 +101,4 @@ class MyMapViewController: UIViewController, UIScrollViewDelegate {
     }
     
     // MARK - Navigation
-    @IBAction func unwindToMain(for unwindSegue: UIStoryboardSegue, towards ViewController: UIViewController) {
-    }
 }
-

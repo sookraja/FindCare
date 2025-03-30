@@ -8,15 +8,14 @@
 import UIKit
 
 class HelpScreenViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-    
-
-    @IBAction func unwindToSettings(for unwindSegue: UIStoryboardSegue, towards SettingsViewController: UIViewController) {
+    @IBAction func unwindToHelp(_ unwindSegue: UIStoryboardSegue) {
+        if let sourceVC = unwindSegue.source as? MapViewController {
+        }
     }
-
 }
