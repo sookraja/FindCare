@@ -45,10 +45,14 @@
                                                 </buttonConfiguration>
                                                 <connections>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                     <segue destination="Cyv-IF-9gB" kind="presentation" modalPresentationStyle="fullScreen" id="OYu-PR-tHa"/>
 =======
                                                     <segue destination="Cyv-IF-9gB" kind="presentation" id="OYu-PR-tHa"/>
 >>>>>>> fc99588 (UI Improvements)
+=======
+                                                    <segue destination="Cyv-IF-9gB" kind="presentation" modalPresentationStyle="fullScreen" id="OYu-PR-tHa"/>
+>>>>>>> 22bface (bug fixes)
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -271,6 +275,7 @@
                 <exit id="RJW-rM-rm8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1219" y="712"/>
+<<<<<<< HEAD
         </scene>
         <!--Help Screen View Controller-->
         <scene sceneID="iWd-if-8o9">
@@ -395,13 +400,15 @@
                 <exit id="IBP-vM-BFe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-57" y="712"/>
+=======
+>>>>>>> 22bface (bug fixes)
         </scene>
         <!--Help Screen View Controller-->
         <scene sceneID="iWd-if-8o9">
             <objects>
                 <viewController id="Cyv-IF-9gB" customClass="HelpScreenViewController" customModule="FindCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7kf-qy-Tqv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bn9-tJ-Eda">
@@ -518,7 +525,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXn-HC-a13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="IBP-vM-BFe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="677.0992366412213" y="798.59154929577471"/>
+            <point key="canvasLocation" x="-57" y="712"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -651,9 +658,13 @@
                     </view>
                     <connections>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <outlet property="departmentLabel" destination="89n-YG-bgS" id="lBQ-3n-oTe"/>
 =======
 >>>>>>> fc99588 (UI Improvements)
+=======
+                        <outlet property="departmentLabel" destination="89n-YG-bgS" id="lBQ-3n-oTe"/>
+>>>>>>> 22bface (bug fixes)
                         <segue destination="RJW-rM-rm8" kind="unwind" unwindAction="unwindToMainFor:towards:" id="j2P-3C-w8B"/>
                         <segue destination="sXB-Ng-L2v" kind="unwind" unwindAction="unwindToMainFor:towards:" id="tOH-Ao-P4a"/>
                     </connections>
