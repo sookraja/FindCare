@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="RG0-PG-v6e" customClass="SettingsViewController" customModule="FindCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IK6-wD-WTh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LB2-mS-S8l">
@@ -44,7 +44,7 @@
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="Cyv-IF-9gB" kind="presentation" id="OYu-PR-tHa"/>
+                                                    <segue destination="Cyv-IF-9gB" kind="presentation" modalPresentationStyle="fullScreen" id="OYu-PR-tHa"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -258,6 +258,7 @@
                         <viewLayoutGuide key="safeArea" id="3ud-TS-Hhs"/>
                         <color key="backgroundColor" red="0.30196078431372547" green="0.36470588235294116" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CyE-k6-6Aa"/>
                     <connections>
                         <segue destination="IBP-vM-BFe" kind="unwind" unwindAction="unwindToSettingsFor:towards:" id="a69-Kr-908"/>
                     </connections>
@@ -265,14 +266,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHq-IO-6AB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="RJW-rM-rm8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-659" y="799"/>
+            <point key="canvasLocation" x="-1219" y="712"/>
         </scene>
         <!--Help Screen View Controller-->
         <scene sceneID="iWd-if-8o9">
             <objects>
                 <viewController id="Cyv-IF-9gB" customClass="HelpScreenViewController" customModule="FindCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7kf-qy-Tqv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bn9-tJ-Eda">
@@ -389,7 +390,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXn-HC-a13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="IBP-vM-BFe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="677.0992366412213" y="798.59154929577471"/>
+            <point key="canvasLocation" x="-57" y="712"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -421,7 +422,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Scf-xe-iye" kind="presentation" id="Zxy-Hx-XdE"/>
+                                    <segue destination="Scf-xe-iye" kind="presentation" modalPresentationStyle="fullScreen" id="Zxy-Hx-XdE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nK-Dt-Ihb">
@@ -447,7 +448,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="RG0-PG-v6e" kind="presentation" id="hge-lN-Zkl"/>
+                                    <segue destination="RG0-PG-v6e" kind="presentation" modalPresentationStyle="fullScreen" id="hge-lN-Zkl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8O3-Y1-XG5">
@@ -470,11 +471,58 @@
                                 <rect key="frame" x="76" y="169" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I31-rm-xoi">
+                                <rect key="frame" x="82" y="648" width="228" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="0.0" height="22"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule" titleAlignment="center">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.2273774858" green="0.4435792583" blue="0.25002657709999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="strokeColor" systemColor="systemGreenColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Map">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Monaco"/>
+                                                <font key="NSOriginalFont" size="16" name="Symbol"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Monaco"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="View">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Monaco"/>
+                                                <font key="NSOriginalFont" size="16" name="Symbol"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="duJ-u0-5hX" kind="presentation" modalPresentationStyle="fullScreen" id="kkW-RP-YF0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89n-YG-bgS">
+                                <rect key="frame" x="31" y="759" width="331" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.30196078431372547" green="0.36470588235294116" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
+                        <outlet property="departmentLabel" destination="89n-YG-bgS" id="lBQ-3n-oTe"/>
                         <segue destination="RJW-rM-rm8" kind="unwind" unwindAction="unwindToMainFor:towards:" id="j2P-3C-w8B"/>
                         <segue destination="sXB-Ng-L2v" kind="unwind" unwindAction="unwindToMainFor:towards:" id="tOH-Ao-P4a"/>
                     </connections>
@@ -493,17 +541,18 @@
                         <viewLayoutGuide key="safeArea" id="UNO-4q-D7h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LL0-6V-aaJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ET-tI-GGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1975" y="4"/>
+            <point key="canvasLocation" x="1218" y="712"/>
         </scene>
         <!--My Map View Controller-->
         <scene sceneID="sOx-Wd-VsD">
             <objects>
                 <viewController id="Scf-xe-iye" customClass="MyMapViewController" customModule="FindCare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gu6-Li-mY6">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f7K-fS-fRh">
@@ -567,6 +616,7 @@
                         <viewLayoutGuide key="safeArea" id="JWA-4T-F9c"/>
                         <color key="backgroundColor" red="0.30196078430000001" green="0.36470588240000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="q8V-ui-rAI"/>
                     <connections>
                         <outlet property="mapImageView" destination="pV0-HP-dDw" id="dK2-gF-Bde"/>
                         <outlet property="scrollView" destination="f7K-fS-fRh" id="ZMt-dz-iT8"/>
@@ -575,7 +625,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ybw-FQ-1lb" sceneMemberID="firstResponder"/>
                 <exit id="sXB-Ng-L2v" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="4"/>
+            <point key="canvasLocation" x="1408" y="-27"/>
         </scene>
     </scenes>
     <resources>

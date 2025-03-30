@@ -1,7 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Floor %lld" : {
 
+    },
+    "Select Floor" : {
+
+    }
   },
   "version" : "1.0"
 }
