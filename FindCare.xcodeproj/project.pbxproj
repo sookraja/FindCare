@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A3176872D94C8F300C24FBA /* MyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3176862D94C8F300C24FBA /* MyMapViewController.swift */; };
+		1A31768B2D94D90600C24FBA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31768A2D94D90600C24FBA /* SettingsViewController.swift */; };
+		9C5B34AA2D9508FD009DD3DA /* HelpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5B34A92D9508FD009DD3DA /* HelpScreenViewController.swift */; };
 		9C6D51232D7E665B00E4D02A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D51192D7E665B00E4D02A /* AppDelegate.swift */; };
 		9C6D51242D7E665B00E4D02A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D51202D7E665B00E4D02A /* SceneDelegate.swift */; };
 		9C6D51252D7E665B00E4D02A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D51212D7E665B00E4D02A /* ViewController.swift */; };
@@ -23,15 +26,30 @@
 		CE7E1CD72D87E41F0072D5B8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD62D87E41F0072D5B8 /* FirebaseFirestore */; };
 		CE7E1CD92D87E5950072D5B8 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E1CD82D87E5950072D5B8 /* FirebaseFirestoreCombine-Community */; };
 		CE90C5F62D89BE750075D1BA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C5F52D89BE750075D1BA /* MapViewController.swift */; };
+		9CA249632D8223CC003117FC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9CA249622D8223C4003117FC /* .gitignore */; };
+		9CB3C2BE2D88886300893C65 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9CB3C2BC2D88886300893C65 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A3176862D94C8F300C24FBA /* MyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapViewController.swift; sourceTree = "<group>"; };
+		1A31768A2D94D90600C24FBA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9C5B34A92D9508FD009DD3DA /* HelpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpScreenViewController.swift; sourceTree = "<group>"; };
 		9C6D51192D7E665B00E4D02A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C6D511A2D7E665B00E4D02A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C6D511C2D7E665B00E4D02A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C6D511E2D7E665B00E4D02A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C6D51202D7E665B00E4D02A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9C6D51212D7E665B00E4D02A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9CA249622D8223C4003117FC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9CB3C2B12D88831400893C65 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9CB3C2B22D88831400893C65 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Main.strings"; sourceTree = "<group>"; };
+		9CB3C2B32D88832900893C65 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9CB3C2B42D88832900893C65 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		9CB3C2B52D88833300893C65 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9CB3C2B62D88833300893C65 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Main.strings"; sourceTree = "<group>"; };
+		9CB3C2BC2D88886300893C65 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9CB3C2BF2D88888D00893C65 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9CB3C2C02D88888D00893C65 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		9CCB85E92D7CBD4900DE8D5F /* FindCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7955922D8F7BA00080F31B /* Level-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-1.png"; sourceTree = "<group>"; };
 		CE7955942D8F7BA60080F31B /* Level-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-2.png"; sourceTree = "<group>"; };
@@ -61,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				CE7955912D8F7B8C0080F31B /* Images */,
+				9CB3C2BD2D88886300893C65 /* Resources */,
+				9CA249622D8223C4003117FC /* .gitignore */,
 				9C6D51192D7E665B00E4D02A /* AppDelegate.swift */,
 				9C6D511A2D7E665B00E4D02A /* Assets.xcassets */,
 				CE7E1CCA2D7FCBD20072D5B8 /* GoogleService-Info.plist */,
@@ -71,8 +91,19 @@
 				9C6D51212D7E665B00E4D02A /* ViewController.swift */,
 				CE90C5F52D89BE750075D1BA /* MapViewController.swift */,
 				CE7955982D8F7ED20080F31B /* IndoorMapView.swift */,
+				1A3176862D94C8F300C24FBA /* MyMapViewController.swift */,
+				1A31768A2D94D90600C24FBA /* SettingsViewController.swift */,
+				9C5B34A92D9508FD009DD3DA /* HelpScreenViewController.swift */,
 			);
 			path = FindCare;
+			sourceTree = "<group>";
+		};
+		9CB3C2BD2D88886300893C65 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9CB3C2BC2D88886300893C65 /* Localizable.xcstrings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9CCB85E02D7CBD4900DE8D5F = {
@@ -157,6 +188,10 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-GB",
+				es,
+				"fr-CA",
+				fr,
 			);
 			mainGroup = 9CCB85E02D7CBD4900DE8D5F;
 			minimizedProjectReferenceProxies = 1;
@@ -178,6 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7955972D8F7BAB0080F31B /* Level-3.png in Resources */,
+				9CA249632D8223CC003117FC /* .gitignore in Resources */,
+				9CB3C2BE2D88886300893C65 /* Localizable.xcstrings in Resources */,
 				9C6D51262D7E665B00E4D02A /* Assets.xcassets in Resources */,
 				CE7E1CCB2D7FCBD20072D5B8 /* GoogleService-Info.plist in Resources */,
 				9C6D51282D7E665B00E4D02A /* LaunchScreen.storyboard in Resources */,
@@ -199,6 +236,9 @@
 				9C6D51242D7E665B00E4D02A /* SceneDelegate.swift in Sources */,
 				9C6D51252D7E665B00E4D02A /* ViewController.swift in Sources */,
 				CE90C5F62D89BE750075D1BA /* MapViewController.swift in Sources */,
+				1A31768B2D94D90600C24FBA /* SettingsViewController.swift in Sources */,
+				1A3176872D94C8F300C24FBA /* MyMapViewController.swift in Sources */,
+				9C5B34AA2D9508FD009DD3DA /* HelpScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +249,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				9C6D511C2D7E665B00E4D02A /* Base */,
+				9CB3C2B12D88831400893C65 /* en-GB */,
+				9CB3C2B32D88832900893C65 /* es */,
+				9CB3C2B52D88833300893C65 /* fr-CA */,
+				9CB3C2BF2D88888D00893C65 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -217,6 +261,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				9C6D511E2D7E665B00E4D02A /* Base */,
+				9CB3C2B22D88831400893C65 /* en-GB */,
+				9CB3C2B42D88832900893C65 /* es */,
+				9CB3C2B62D88833300893C65 /* fr-CA */,
+				9CB3C2C02D88888D00893C65 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -285,6 +333,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -339,6 +388,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -348,6 +398,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -395,6 +446,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
