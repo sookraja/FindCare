@@ -135,6 +135,7 @@ class ViewController: UIViewController {
     @IBAction func unwindToMain(_ unwindSegue: UIStoryboardSegue) {
         if let sourceVC = unwindSegue.source as? SettingsViewController {
         } else if let sourceVC = unwindSegue.source as? MyMapViewController {
+        } else if let sourceVC = unwindSegue.source as? MapViewController {
         }
     }
 }

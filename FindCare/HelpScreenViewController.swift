@@ -14,8 +14,4 @@ class HelpScreenViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    @IBAction func unwindToHelp(_ unwindSegue: UIStoryboardSegue) {
-        if let sourceVC = unwindSegue.source as? MapViewController {
-        }
-    }
 }
