@@ -120,8 +120,8 @@ class DotsAndPathView: UIView {
     
     // Dot properties
     private let dotRadius: CGFloat = 2
-    private var startPoint: CGPoint = CGPoint(x: 100, y: 200)
-    private var endPoint: CGPoint = CGPoint(x: 300, y: 300)
+    private var startPoint: CGPoint = CGPoint(x: 100, y: 240)
+    private var endPoint: CGPoint = CGPoint(x: 300, y: 275)
     
     // Track which dot is being dragged
     private var draggingStartDot = false
