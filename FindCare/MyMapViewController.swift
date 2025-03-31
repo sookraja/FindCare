@@ -128,9 +128,12 @@ class DotsAndPathView: UIView {
     private var draggingEndDot = false
     
     private var wallGrid: [[Bool]] = []
-    private let gridSize: CGFloat = 10 // Size of each grid cell
+    private let gridSize: CGFloat = 2 // Size of each grid cell
     
     private var pathPoints: [CGPoint] = []
+    
+    var showDebugGrid: Bool = true
+    var showWalls: Bool = true
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -154,23 +157,73 @@ class DotsAndPathView: UIView {
     override func draw(_ rect: CGRect) {
             guard let context = UIGraphicsGetCurrentContext() else { return }
             
-            // Option B: Visualize the wall grid (for debugging)
-            if !wallGrid.isEmpty {
-                context.setFillColor(UIColor.gray.withAlphaComponent(0.5).cgColor)
-                for y in 0..<wallGrid.count {
-                    for x in 0..<wallGrid[y].count {
-                        if wallGrid[y][x] {
-                            let rect = CGRect(
-                                x: CGFloat(x) * gridSize,
-                                y: CGFloat(y) * gridSize,
-                                width: gridSize,
-                                height: gridSize
-                            )
-                            context.fill(rect)
+        if showDebugGrid && !wallGrid.isEmpty {
+                    // Draw grid lines
+                    context.setStrokeColor(UIColor.lightGray.withAlphaComponent(0.3).cgColor)
+                    context.setLineWidth(0.5)
+                    
+                    let width = wallGrid[0].count
+                    let height = wallGrid.count
+                    
+                    // Draw vertical lines
+                    for x in 0...width {
+                        let xPos = CGFloat(x) * gridSize
+                        context.move(to: CGPoint(x: xPos, y: 0))
+                        context.addLine(to: CGPoint(x: xPos, y: CGFloat(height) * gridSize))
+                    }
+                    
+                    // Draw horizontal lines
+                    for y in 0...height {
+                        let yPos = CGFloat(y) * gridSize
+                        context.move(to: CGPoint(x: 0, y: yPos))
+                        context.addLine(to: CGPoint(x: CGFloat(width) * gridSize, y: yPos))
+                    }
+                    
+                    context.strokePath()
+                    
+                    // Highlight wall cells
+                    if showWalls {
+                        context.setFillColor(UIColor.red.withAlphaComponent(0.4).cgColor)
+                        
+                        for y in 0..<height {
+                            for x in 0..<width {
+                                if wallGrid[y][x] {
+                                    let rect = CGRect(
+                                        x: CGFloat(x) * gridSize,
+                                        y: CGFloat(y) * gridSize,
+                                        width: gridSize,
+                                        height: gridSize
+                                    )
+                                    context.fill(rect)
+                                }
+                            }
                         }
                     }
-                }
-            }
+            
+            // Optionally, add grid coordinates for even more detailed debugging
+                        let fontSize: CGFloat = min(gridSize * 0.5, 8) // Adjust based on grid size
+                        let font = UIFont.systemFont(ofSize: fontSize)
+                        let attributes: [NSAttributedString.Key: Any] = [
+                            .font: font,
+                            .foregroundColor: UIColor.darkGray
+                        ]
+                        
+                        // Only show coordinates for larger grid sizes to avoid clutter
+                        if gridSize >= 20 {
+                            for y in 0..<height {
+                                for x in 0..<width {
+                                    let text = "(\(x),\(y))"
+                                    let textRect = CGRect(
+                                        x: CGFloat(x) * gridSize + 2,
+                                        y: CGFloat(y) * gridSize + 2,
+                                        width: gridSize - 4,
+                                        height: gridSize - 4
+                                    )
+                                    text.draw(in: textRect, withAttributes: attributes)
+                                }
+                            }
+                        }
+                    }
             
             // Draw the path between dots
             if pathPoints.isEmpty {
@@ -275,7 +328,7 @@ class DotsAndPathView: UIView {
                             let blue = bytes[offset + 2]
                             
                             // Dark pixel detection (adjust threshold as needed)
-                            if red < 100 && green < 100 && blue < 100 {
+                            if red < 200 && green < 200 && blue < 200 {
                                 wallGrid[y][x] = true
                             }
                         }
