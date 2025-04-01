@@ -14,10 +14,10 @@ protocol LocationMarkerDelegate: AnyObject {
 
 class LocationMarkerView: UIButton {
 
-    private var location: Location!
-    weak var delegate: LocationMarkerDelegate?
+    var location: Location!
+    var delegate: LocationMarkerDelegate?
     
-    // Change this to avoid ambiguity with UIButton's isHighlighted
+    
     var markerHighlighted: Bool = false {
         didSet {
             updateAppearance()
@@ -33,13 +33,13 @@ class LocationMarkerView: UIButton {
     }
     
     convenience init(location: Location) {
-        // Make markers smaller to fit your map better
+       
         self.init(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
         self.location = location
         setupView()
     }
-    // MARK: - Setup
-    private func setupView() {
+    
+    func setupView() {
         // Set appearance based on location type
         backgroundColor = location.type.color
         layer.cornerRadius = frame.width / 2
@@ -53,12 +53,11 @@ class LocationMarkerView: UIButton {
         imageView?.contentMode = .scaleAspectFit
         imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         
-        // Add action
         addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
 
-    @objc private func buttonTapped() {
+    @objc func buttonTapped() {
         delegate?.locationMarkerTapped(location)
     }
     
@@ -72,7 +71,8 @@ class LocationMarkerView: UIButton {
             height: size.height
         )
     }
-    private func updateAppearance() {
+    
+    func updateAppearance() {
         if markerHighlighted {
             transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
             layer.borderWidth = 3

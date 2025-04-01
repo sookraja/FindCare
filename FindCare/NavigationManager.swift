@@ -14,7 +14,6 @@ class NavigationManager: NSObject {
     private(set) var selectedStartLocation: Location?
     private(set) var selectedDestLocation: Location?
     
-
     class PathSegment: NSObject {
         let from: CGPoint
         let to: CGPoint
@@ -28,39 +27,37 @@ class NavigationManager: NSObject {
         }
     }
     
-  
     override init() {
         super.init()
         setupLocations()
     }
     
     func setupLocations() {
-        
         locations = [
-            // Top row of rooms (left to right)
-            Location(id: "m101", name: "Classroom", roomNumber: "M101", type: .classroom, coordinate: CGPoint(x: 127, y: 227)),
-            Location(id: "m102", name: "Classroom", roomNumber: "M102", type: .classroom, coordinate: CGPoint(x: 190, y: 227)),
-            Location(id: "m103", name: "Computer Lab", roomNumber: "M103", type: .lab, coordinate: CGPoint(x: 253, y: 227)),
-            Location(id: "m104", name: "Faculty Office", roomNumber: "M104", type: .office, coordinate: CGPoint(x: 316, y: 227)),
-            Location(id: "washroom1", name: "Washroom", roomNumber: "M-W1", type: .washroom, coordinate: CGPoint(x: 379, y: 227)),
-            Location(id: "stairs1", name: "Stairwell", roomNumber: "M-S1", type: .stairs, coordinate: CGPoint(x: 442, y: 227)),
-            Location(id: "exit1", name: "Emergency Exit", roomNumber: "M-X1", type: .exit, coordinate: CGPoint(x: 505, y: 227)),
-            Location(id: "exit2", name: "Emergency Exit", roomNumber: "M-X2", type: .exit, coordinate: CGPoint(x: 568, y: 227)),
+            // Top row of hospital rooms (left to right)
+            Location(id: "emergency", name: "Emergency Room", roomNumber: "H101", type: .emergency,
+                    coordinate: CGPoint(x: 127, y: 227)),
+            Location(id: "icu", name: "Intensive Care Unit", roomNumber: "H102", type: .icu,
+                    coordinate: CGPoint(x: 253, y: 227)),
+            Location(id: "surgery", name: "Surgery", roomNumber: "H103", type: .surgery,
+                    coordinate: CGPoint(x: 379, y: 227)),
+            Location(id: "imaging", name: "Imaging", roomNumber: "H104", type: .imaging,
+                    coordinate: CGPoint(x: 505, y: 227)),
             
-            // Bottom row of rooms (left to right)
-            Location(id: "entrance1", name: "Main Entrance", roomNumber: "M-E1", type: .entrance, coordinate: CGPoint(x: 75, y: 280)),
-            Location(id: "m201", name: "Classroom", roomNumber: "M201", type: .classroom, coordinate: CGPoint(x: 127, y: 280)),
-            Location(id: "m202", name: "Classroom", roomNumber: "M202", type: .classroom, coordinate: CGPoint(x: 190, y: 280)),
-            Location(id: "m203", name: "Classroom", roomNumber: "M203", type: .classroom, coordinate: CGPoint(x: 253, y: 280)),
-            Location(id: "m204", name: "Computer Lab", roomNumber: "M204", type: .lab, coordinate: CGPoint(x: 316, y: 280)),
-            Location(id: "m205", name: "Faculty Office", roomNumber: "M205", type: .office, coordinate: CGPoint(x: 379, y: 280)),
-            Location(id: "m206", name: "Classroom", roomNumber: "M206", type: .classroom, coordinate: CGPoint(x: 442, y: 280)),
-            Location(id: "m207", name: "Classroom", roomNumber: "M207", type: .classroom, coordinate: CGPoint(x: 505, y: 280)),
-            Location(id: "m208", name: "Classroom", roomNumber: "M208", type: .classroom, coordinate: CGPoint(x: 568, y: 280))
+            // Bottom row of hospital rooms (left to right)
+            Location(id: "entrance", name: "Main Entrance", roomNumber: "H-E1", type: .entrance,
+                    coordinate: CGPoint(x: 75, y: 280)),
+            Location(id: "reception", name: "Reception", roomNumber: "H201", type: .reception,
+                    coordinate: CGPoint(x: 190, y: 280)),
+            Location(id: "pharmacy", name: "Pharmacy", roomNumber: "H202", type: .pharmacy,
+                    coordinate: CGPoint(x: 316, y: 280)),
+            Location(id: "cafeteria", name: "Cafeteria", roomNumber: "H203", type: .cafeteria,
+                    coordinate: CGPoint(x: 442, y: 280)),
+            Location(id: "exit", name: "Emergency Exit", roomNumber: "H-X1", type: .exit,
+                    coordinate: CGPoint(x: 568, y: 280))
         ]
     }
     
-   
     func setStartLocation(_ location: Location) {
         selectedStartLocation = location
     }
@@ -166,3 +163,4 @@ class NavigationManager: NSObject {
         return totalDistance
     }
 }
+

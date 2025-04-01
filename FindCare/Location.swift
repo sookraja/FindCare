@@ -14,71 +14,83 @@ class Location: NSObject {
     let roomNumber: String
     let type: LocationType
     let coordinate: CGPoint
-   
-    private var _description: String
     
-    override var description: String {
-        return _description
-    }
-    
-    enum LocationType {
-        case classroom
-        case lab
-        case office
-        case washroom
-        case exit
-        case stairs
-        case entrance
-        
-        // Get color for location type
-        var color: UIColor {
-            switch self {
-            case .classroom:
-                return .systemBlue
-            case .lab:
-                return .systemGreen
-            case .office:
-                return .systemPurple
-            case .washroom:
-                return .systemTeal
-            case .exit:
-                return .systemRed
-            case .stairs:
-                return .systemOrange
-            case .entrance:
-                return .systemYellow
-            }
-        }
-        
-        // Get icon name for location type
-        var iconName: String {
-            switch self {
-            case .classroom:
-                return "person.2"
-            case .lab:
-                return "desktopcomputer"
-            case .office:
-                return "person.text.rectangle"
-            case .washroom:
-                return "figure.wave"
-            case .exit:
-                return "door.right.hand.open"
-            case .stairs:
-                return "arrow.up.arrow.down"
-            case .entrance:
-                return "arrow.right.to.line"
-            }
-        }
-    }
-    
-    // Updated initializer
-    init(id: String, name: String, roomNumber: String, type: LocationType, coordinate: CGPoint, description: String = "") {
+    init(id: String, name: String, roomNumber: String, type: LocationType, coordinate: CGPoint) {
         self.id = id
         self.name = name
         self.roomNumber = roomNumber
         self.type = type
         self.coordinate = coordinate
-        self._description = description.isEmpty ? "\(name) (\(roomNumber))" : description
         super.init()
     }
+    
+    enum LocationType {
+        case entrance
+        case exit
+        case emergency
+        case icu
+        case surgery
+        case imaging
+        case pharmacy
+        case reception
+        case cafeteria
+        case restroom
+        case elevator
+        case stairs
+        
+        var color: UIColor {
+            switch self {
+            case .entrance, .exit:
+                return .systemGreen
+            case .emergency:
+                return .systemRed
+            case .icu:
+                return .systemOrange
+            case .surgery:
+                return .systemPink
+            case .imaging:
+                return .systemPurple
+            case .pharmacy:
+                return .systemTeal
+            case .reception:
+                return .systemBlue
+            case .cafeteria:
+                return .systemBrown
+            case .restroom:
+                return .systemIndigo
+            case .elevator, .stairs:
+                return .systemGray
+            }
+        }
+        
+        var iconName: String {
+            switch self {
+            case .entrance:
+                return "door.right.hand.open"
+            case .exit:
+                return "door.left.hand.open"
+            case .emergency:
+                return "cross.case"
+            case .icu:
+                return "heart.text.square"
+            case .surgery:
+                return "scissors"
+            case .imaging:
+                return "rays"
+            case .pharmacy:
+                return "pills"
+            case .reception:
+                return "person.text.rectangle"
+            case .cafeteria:
+                return "cup.and.saucer"
+            case .restroom:
+                return "figure.dress.line.vertical.figure"
+            case .elevator:
+                return "arrow.up.arrow.down"
+            case .stairs:
+                return "stairs"
+            }
+        }
+    }
 }
+
