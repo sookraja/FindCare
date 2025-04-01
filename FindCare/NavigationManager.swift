@@ -10,9 +10,9 @@ import UIKit
 
 class NavigationManager: NSObject {
     
-    private(set) var locations: [Location] = []
-    private(set) var selectedStartLocation: Location?
-    private(set) var selectedDestLocation: Location?
+    var locations: [Location] = []
+    var selectedStartLocation: Location?
+    var selectedDestLocation: Location?
     
     class PathSegment: NSObject {
         let from: CGPoint
@@ -34,7 +34,7 @@ class NavigationManager: NSObject {
     
     func setupLocations() {
         locations = [
-            // Top row of hospital rooms (left to right)
+        
             Location(id: "emergency", name: "Emergency Room", roomNumber: "H101", type: .emergency,
                     coordinate: CGPoint(x: 127, y: 227)),
             Location(id: "icu", name: "Intensive Care Unit", roomNumber: "H102", type: .icu,
@@ -44,7 +44,7 @@ class NavigationManager: NSObject {
             Location(id: "imaging", name: "Imaging", roomNumber: "H104", type: .imaging,
                     coordinate: CGPoint(x: 505, y: 227)),
             
-            // Bottom row of hospital rooms (left to right)
+
             Location(id: "entrance", name: "Main Entrance", roomNumber: "H-E1", type: .entrance,
                     coordinate: CGPoint(x: 75, y: 280)),
             Location(id: "reception", name: "Reception", roomNumber: "H201", type: .reception,
@@ -76,15 +76,15 @@ class NavigationManager: NSObject {
             return nil
         }
         
-        // Create a simple path with waypoints
+       
         var segments: [PathSegment] = []
         
-        // Determine if we need to go through the corridor
+      
         let needsCorridor = abs(start.coordinate.y - destination.coordinate.y) > 20
         
         if needsCorridor {
-            // Add segment from start to corridor
-            let corridorY: CGFloat = 253 // Adjusted Y-coordinate of the main corridor
+
+            let corridorY: CGFloat = 253
             let startToCorridorPoint = CGPoint(x: start.coordinate.x, y: corridorY)
             segments.append(PathSegment(
                 from: start.coordinate,
@@ -92,24 +92,21 @@ class NavigationManager: NSObject {
                 instruction: "Exit \(start.name) (\(start.roomNumber)) and head to the main corridor"
             ))
             
-            // Add segment along corridor
+ 
             let corridorToDestPoint = CGPoint(x: destination.coordinate.x, y: corridorY)
             let direction = start.coordinate.x < destination.coordinate.x ? "right" : "left"
-            segments.append(PathSegment(
+                segments.append(PathSegment(
                 from: startToCorridorPoint,
                 to: corridorToDestPoint,
                 instruction: "Turn \(direction) and walk along the main corridor"
             ))
-            
-            // Add segment from corridor to destination
-            segments.append(PathSegment(
+                segments.append(PathSegment(
                 from: corridorToDestPoint,
                 to: destination.coordinate,
                 instruction: "Enter \(destination.name) (\(destination.roomNumber))"
             ))
         } else {
-            // Direct path if both are on the same side of the corridor
-            segments.append(PathSegment(
+                segments.append(PathSegment(
                 from: start.coordinate,
                 to: destination.coordinate,
                 instruction: "Walk directly from \(start.name) to \(destination.name)"
@@ -126,21 +123,21 @@ class NavigationManager: NSObject {
             return ["Select a starting point and destination to get directions."]
         }
         
-        // Create instructions from path segments
+        
         var instructions: [String] = []
         
-        // Add start instruction
+
         instructions.append("Start at \(start.name) (\(start.roomNumber))")
         
-        // Add segment instructions
+
         for segment in pathSegments {
             instructions.append(segment.instruction)
         }
         
-        // Add destination instruction
+
         instructions.append("Arrive at \(destination.name) (\(destination.roomNumber))")
         
-        // Calculate approximate distance
+
         let totalDistance = calculateTotalDistance(pathSegments)
         instructions.append("Total distance: approximately \(Int(totalDistance)) meters")
         
@@ -154,8 +151,6 @@ class NavigationManager: NSObject {
             let dx = segment.to.x - segment.from.x
             let dy = segment.to.y - segment.from.y
             let segmentDistance = sqrt(dx*dx + dy*dy)
-            
-            // Convert from points to approximate meters (adjust this factor based on your map scale)
             let metersPerPoint: CGFloat = 0.2
             totalDistance += segmentDistance * metersPerPoint
         }
