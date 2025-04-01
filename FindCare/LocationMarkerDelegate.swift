@@ -1,3 +1,11 @@
+//
+//  LocationMarkerDelegate.swift
+//  FindCare
+//
+//  Created by Edgar Ponce on 2025-03-31.
+//
+
+
 import UIKit
 
 protocol LocationMarkerDelegate: AnyObject {
@@ -5,7 +13,7 @@ protocol LocationMarkerDelegate: AnyObject {
 }
 
 class LocationMarkerView: UIButton {
-    // MARK: - Properties
+
     private var location: Location!
     weak var delegate: LocationMarkerDelegate?
     
@@ -15,8 +23,7 @@ class LocationMarkerView: UIButton {
             updateAppearance()
         }
     }
-    
-    // MARK: - Initialization
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -26,11 +33,11 @@ class LocationMarkerView: UIButton {
     }
     
     convenience init(location: Location) {
-        self.init(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        // Make markers smaller to fit your map better
+        self.init(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
         self.location = location
         setupView()
     }
-    
     // MARK: - Setup
     private func setupView() {
         // Set appearance based on location type
@@ -50,12 +57,12 @@ class LocationMarkerView: UIButton {
         addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
-    // MARK: - Actions
+
     @objc private func buttonTapped() {
         delegate?.locationMarkerTapped(location)
     }
     
-    // MARK: - Public Methods
+    
     func updatePosition(at point: CGPoint, scale: CGFloat = 1.0) {
         let size = frame.size
         frame = CGRect(
@@ -65,7 +72,6 @@ class LocationMarkerView: UIButton {
             height: size.height
         )
     }
-    
     private func updateAppearance() {
         if markerHighlighted {
             transform = CGAffineTransform(scaleX: 1.2, y: 1.2)

@@ -1,12 +1,20 @@
+//
+//  NavigationManager.swift
+//  FindCare
+//
+//  Created by Edgar Ponce on 2025-03-31.
+//
+
+
 import UIKit
 
 class NavigationManager: NSObject {
-    // MARK: - Properties
+    
     private(set) var locations: [Location] = []
     private(set) var selectedStartLocation: Location?
     private(set) var selectedDestLocation: Location?
     
-    // MARK: - Path Model
+
     class PathSegment: NSObject {
         let from: CGPoint
         let to: CGPoint
@@ -20,35 +28,39 @@ class NavigationManager: NSObject {
         }
     }
     
-    // MARK: - Initialization
+  
     override init() {
         super.init()
         setupLocations()
     }
     
-    // MARK: - Location Setup
-    private func setupLocations() {
-        // Define key locations in the M Building
+    func setupLocations() {
+        
         locations = [
-            Location(id: "entrance1", name: "Main Entrance", roomNumber: "M-E1", type: .entrance, coordinate: CGPoint(x: 130, y: 460)),
-            Location(id: "m101", name: "Classroom", roomNumber: "M101", type: .classroom, coordinate: CGPoint(x: 180, y: 430)),
-            Location(id: "m102", name: "Classroom", roomNumber: "M102", type: .classroom, coordinate: CGPoint(x: 230, y: 430)),
-            Location(id: "m103", name: "Computer Lab", roomNumber: "M103", type: .lab, coordinate: CGPoint(x: 280, y: 430)),
-            Location(id: "m104", name: "Faculty Office", roomNumber: "M104", type: .office, coordinate: CGPoint(x: 330, y: 430)),
-            Location(id: "washroom1", name: "Washroom", roomNumber: "M-W1", type: .washroom, coordinate: CGPoint(x: 380, y: 430)),
-            Location(id: "stairs1", name: "Stairwell", roomNumber: "M-S1", type: .stairs, coordinate: CGPoint(x: 430, y: 430)),
-            Location(id: "exit1", name: "Emergency Exit", roomNumber: "M-X1", type: .exit, coordinate: CGPoint(x: 450, y: 460)),
+            // Top row of rooms (left to right)
+            Location(id: "m101", name: "Classroom", roomNumber: "M101", type: .classroom, coordinate: CGPoint(x: 127, y: 227)),
+            Location(id: "m102", name: "Classroom", roomNumber: "M102", type: .classroom, coordinate: CGPoint(x: 190, y: 227)),
+            Location(id: "m103", name: "Computer Lab", roomNumber: "M103", type: .lab, coordinate: CGPoint(x: 253, y: 227)),
+            Location(id: "m104", name: "Faculty Office", roomNumber: "M104", type: .office, coordinate: CGPoint(x: 316, y: 227)),
+            Location(id: "washroom1", name: "Washroom", roomNumber: "M-W1", type: .washroom, coordinate: CGPoint(x: 379, y: 227)),
+            Location(id: "stairs1", name: "Stairwell", roomNumber: "M-S1", type: .stairs, coordinate: CGPoint(x: 442, y: 227)),
+            Location(id: "exit1", name: "Emergency Exit", roomNumber: "M-X1", type: .exit, coordinate: CGPoint(x: 505, y: 227)),
+            Location(id: "exit2", name: "Emergency Exit", roomNumber: "M-X2", type: .exit, coordinate: CGPoint(x: 568, y: 227)),
             
-            // Bottom row of rooms
-            Location(id: "m201", name: "Classroom", roomNumber: "M201", type: .classroom, coordinate: CGPoint(x: 180, y: 490)),
-            Location(id: "m202", name: "Classroom", roomNumber: "M202", type: .classroom, coordinate: CGPoint(x: 230, y: 490)),
-            Location(id: "m203", name: "Computer Lab", roomNumber: "M203", type: .lab, coordinate: CGPoint(x: 280, y: 490)),
-            Location(id: "m204", name: "Faculty Office", roomNumber: "M204", type: .office, coordinate: CGPoint(x: 330, y: 490)),
-            Location(id: "washroom2", name: "Washroom", roomNumber: "M-W2", type: .washroom, coordinate: CGPoint(x: 380, y: 490))
+            // Bottom row of rooms (left to right)
+            Location(id: "entrance1", name: "Main Entrance", roomNumber: "M-E1", type: .entrance, coordinate: CGPoint(x: 75, y: 280)),
+            Location(id: "m201", name: "Classroom", roomNumber: "M201", type: .classroom, coordinate: CGPoint(x: 127, y: 280)),
+            Location(id: "m202", name: "Classroom", roomNumber: "M202", type: .classroom, coordinate: CGPoint(x: 190, y: 280)),
+            Location(id: "m203", name: "Classroom", roomNumber: "M203", type: .classroom, coordinate: CGPoint(x: 253, y: 280)),
+            Location(id: "m204", name: "Computer Lab", roomNumber: "M204", type: .lab, coordinate: CGPoint(x: 316, y: 280)),
+            Location(id: "m205", name: "Faculty Office", roomNumber: "M205", type: .office, coordinate: CGPoint(x: 379, y: 280)),
+            Location(id: "m206", name: "Classroom", roomNumber: "M206", type: .classroom, coordinate: CGPoint(x: 442, y: 280)),
+            Location(id: "m207", name: "Classroom", roomNumber: "M207", type: .classroom, coordinate: CGPoint(x: 505, y: 280)),
+            Location(id: "m208", name: "Classroom", roomNumber: "M208", type: .classroom, coordinate: CGPoint(x: 568, y: 280))
         ]
     }
     
-    // MARK: - Navigation Methods
+   
     func setStartLocation(_ location: Location) {
         selectedStartLocation = location
     }
@@ -67,9 +79,6 @@ class NavigationManager: NSObject {
             return nil
         }
         
-        // For simplicity, we'll create a direct path with waypoints
-        // In a real app, you would implement A* or Dijkstra's algorithm
-        
         // Create a simple path with waypoints
         var segments: [PathSegment] = []
         
@@ -78,7 +87,7 @@ class NavigationManager: NSObject {
         
         if needsCorridor {
             // Add segment from start to corridor
-            let corridorY = 460 // Y-coordinate of the main corridor
+            let corridorY: CGFloat = 253 // Adjusted Y-coordinate of the main corridor
             let startToCorridorPoint = CGPoint(x: start.coordinate.x, y: corridorY)
             segments.append(PathSegment(
                 from: start.coordinate,

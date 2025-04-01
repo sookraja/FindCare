@@ -1,3 +1,11 @@
+//
+//  Location.swift
+//  FindCare
+//
+//  Created by Edgar Ponce on 2025-03-31.
+//
+
+
 import UIKit
 
 class Location: NSObject {
@@ -6,7 +14,12 @@ class Location: NSObject {
     let roomNumber: String
     let type: LocationType
     let coordinate: CGPoint
-    var description: String
+   
+    private var _description: String
+    
+    override var description: String {
+        return _description
+    }
     
     enum LocationType {
         case classroom
@@ -58,14 +71,14 @@ class Location: NSObject {
         }
     }
     
-    // Convenience initializer with default description
+    // Updated initializer
     init(id: String, name: String, roomNumber: String, type: LocationType, coordinate: CGPoint, description: String = "") {
         self.id = id
         self.name = name
         self.roomNumber = roomNumber
         self.type = type
         self.coordinate = coordinate
-        self.description = description.isEmpty ? "\(name) (\(roomNumber))" : description
+        self._description = description.isEmpty ? "\(name) (\(roomNumber))" : description
         super.init()
     }
 }

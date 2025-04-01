@@ -357,6 +357,12 @@
                                     <action selector="rotateClockwiseButtonTapped:" destination="Scf-xe-iye" eventType="touchUpInside" id="xyQ-8C-Lck"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oY-MQ-yS3">
+                                <rect key="frame" x="16" y="645" width="105" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Navigation"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JWA-4T-F9c"/>
                         <color key="backgroundColor" red="0.30196078430000001" green="0.36470588240000001" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -376,7 +382,7 @@
         <image name="M Building" width="2095" height="1001"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

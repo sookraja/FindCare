@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1A3176872D94C8F300C24FBA /* MyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3176862D94C8F300C24FBA /* MyMapViewController.swift */; };
 		1A31768B2D94D90600C24FBA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31768A2D94D90600C24FBA /* SettingsViewController.swift */; };
+		1AEC6F5D2D9B7747003DC272 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC6F5C2D9B7747003DC272 /* Location.swift */; };
+		1AEC6F5F2D9B7770003DC272 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC6F5E2D9B7770003DC272 /* NavigationManager.swift */; };
+		1AEC6F632D9B78B4003DC272 /* LocationMarkerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC6F622D9B78B4003DC272 /* LocationMarkerDelegate.swift */; };
 		9C6D51232D7E665B00E4D02A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D51192D7E665B00E4D02A /* AppDelegate.swift */; };
 		9C6D51242D7E665B00E4D02A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D51202D7E665B00E4D02A /* SceneDelegate.swift */; };
 		9C6D51252D7E665B00E4D02A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D51212D7E665B00E4D02A /* ViewController.swift */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		1A3176862D94C8F300C24FBA /* MyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapViewController.swift; sourceTree = "<group>"; };
 		1A31768A2D94D90600C24FBA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1AEC6F5C2D9B7747003DC272 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		1AEC6F5E2D9B7770003DC272 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		1AEC6F622D9B78B4003DC272 /* LocationMarkerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMarkerDelegate.swift; sourceTree = "<group>"; };
 		9C6D51192D7E665B00E4D02A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C6D511A2D7E665B00E4D02A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C6D511B2D7E665B00E4D02A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +62,9 @@
 		9C6D51222D7E665B00E4D02A /* FindCare */ = {
 			isa = PBXGroup;
 			children = (
+				1AEC6F5E2D9B7770003DC272 /* NavigationManager.swift */,
+				1AEC6F622D9B78B4003DC272 /* LocationMarkerDelegate.swift */,
+				1AEC6F5C2D9B7747003DC272 /* Location.swift */,
 				9CB3C2BD2D88886300893C65 /* Resources */,
 				9CA249622D8223C4003117FC /* .gitignore */,
 				9C6D51192D7E665B00E4D02A /* AppDelegate.swift */,
@@ -177,8 +186,11 @@
 			files = (
 				9C6D51232D7E665B00E4D02A /* AppDelegate.swift in Sources */,
 				9C6D51242D7E665B00E4D02A /* SceneDelegate.swift in Sources */,
+				1AEC6F5F2D9B7770003DC272 /* NavigationManager.swift in Sources */,
 				9C6D51252D7E665B00E4D02A /* ViewController.swift in Sources */,
 				1A31768B2D94D90600C24FBA /* SettingsViewController.swift in Sources */,
+				1AEC6F632D9B78B4003DC272 /* LocationMarkerDelegate.swift in Sources */,
+				1AEC6F5D2D9B7747003DC272 /* Location.swift in Sources */,
 				1A3176872D94C8F300C24FBA /* MyMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
