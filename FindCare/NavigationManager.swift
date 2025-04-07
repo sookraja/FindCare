@@ -42,7 +42,7 @@ class NavigationManager: NSObject {
             Location(id: "surgery", name: "Surgery", roomNumber: "H103", type: .surgery,
                     coordinate: CGPoint(x: 300, y: 227)),
             Location(id: "imaging", name: "Imaging", roomNumber: "H104", type: .imaging,
-                    coordinate: CGPoint(x: 505, y: 227)),
+                    coordinate: CGPoint(x: 64, y: 227)),
             
             // Bottom row - corridor
             Location(id: "entrance", name: "Main Entrance", roomNumber: "H-E1", type: .entrance,
