@@ -5,12 +5,13 @@
 //  Created by Edgar Ponce on 2025-03-26.
 //
 
+
 import UIKit
 
 class MyMapViewController: UIViewController, UIScrollViewDelegate, LocationMarkerDelegate {
     
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var mapImageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mapImageView: UIImageView!
     
     var currentRotationIndex: Int = 0
     let rotationAngles: [CGFloat] = [0, CGFloat.pi/2, CGFloat.pi, 3 * CGFloat.pi/2]
@@ -82,9 +83,9 @@ class MyMapViewController: UIViewController, UIScrollViewDelegate, LocationMarke
             marker.tag = index
             scrollView.addSubview(marker)
             locationMarkers.append(marker)
-            
-            marker.updatePosition(at: location.coordinate, scale: scrollView.zoomScale)
         }
+        
+        updateMarkerPositions()
         
         locationMarkers.forEach { marker in
             scrollView.bringSubviewToFront(marker)
@@ -202,6 +203,9 @@ class MyMapViewController: UIViewController, UIScrollViewDelegate, LocationMarke
         centerImage()
         
         updateMarkerPositions()
+        
+        pathLayer?.removeFromSuperlayer()
+        pathLayer = nil
     }
     
     func locationMarkerTapped(_ location: Location) {
@@ -237,7 +241,6 @@ class MyMapViewController: UIViewController, UIScrollViewDelegate, LocationMarke
     }
     
     @objc func navigationButtonTapped() {
-       
         UIView.animate(withDuration: 0.3) {
             if self.navigationPanel.frame.origin.y >= self.view.bounds.height {
                 self.navigationPanel.frame.origin.y = self.view.bounds.height - 200
@@ -305,40 +308,78 @@ class MyMapViewController: UIViewController, UIScrollViewDelegate, LocationMarke
     func drawPath(_ pathSegments: [NavigationManager.PathSegment]) {
         pathLayer?.removeFromSuperlayer()
         
+        
         let path = UIBezierPath()
         
-        if let firstSegment = pathSegments.first {
-            path.move(to: CGPoint(x: firstSegment.from.x * scrollView.zoomScale,
-                                 y: firstSegment.from.y * scrollView.zoomScale))
+        var startMarker: LocationMarkerView?
+        var endMarker: LocationMarkerView?
+        
+        if let startLocation = navigationManager.selectedStartLocation,
+           let startIndex = navigationManager.locations.firstIndex(where: { $0.id == startLocation.id }),
+           startIndex < locationMarkers.count {
+            startMarker = locationMarkers[startIndex]
         }
         
-        for segment in pathSegments {
-            path.addLine(to: CGPoint(x: segment.to.x * scrollView.zoomScale,
-                                    y: segment.to.y * scrollView.zoomScale))
+        if let endLocation = navigationManager.selectedDestLocation,
+           let endIndex = navigationManager.locations.firstIndex(where: { $0.id == endLocation.id }),
+           endIndex < locationMarkers.count {
+            endMarker = locationMarkers[endIndex]
         }
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.strokeColor = UIColor.systemBlue.cgColor
-        shapeLayer.lineWidth = 4
-        shapeLayer.fillColor = nil
-        shapeLayer.lineCap = .round
-        shapeLayer.lineJoin = .round
-        shapeLayer.lineDashPattern = [10, 5]
+
+        if let startMarker = startMarker, let endMarker = endMarker {
+  
+            path.move(to: startMarker.center)
+            
+            for segment in pathSegments {
+                if let toLocation = navigationManager.locations.first(where: {
+                    $0.coordinate.x == segment.to.x && $0.coordinate.y == segment.to.y
+                }),
+                   let toIndex = navigationManager.locations.firstIndex(where: { $0.id == toLocation.id }),
+                   toIndex < locationMarkers.count {
+                    let toMarker = locationMarkers[toIndex]
+                    path.addLine(to: toMarker.center)
+                } else {
+                    let toPoint = convertMapPointToView(segment.to)
+                    path.addLine(to: toPoint)
+                }
+            }
+            
+       
+            let shapeLayer = CAShapeLayer()
+            shapeLayer.path = path.cgPath
+            shapeLayer.strokeColor = UIColor.systemBlue.cgColor
+            shapeLayer.lineWidth = 4
+            shapeLayer.fillColor = nil
+            shapeLayer.lineCap = .round
+            shapeLayer.lineJoin = .round
+            shapeLayer.lineDashPattern = [10, 5]
+            
+            let animation = CABasicAnimation(keyPath: "strokeEnd")
+            animation.fromValue = 0
+            animation.toValue = 1
+            animation.duration = 1.5
+            shapeLayer.add(animation, forKey: "drawPathAnimation")
+            
+            scrollView.layer.addSublayer(shapeLayer)
+            pathLayer = shapeLayer
+        }
+    }
+    
+    func convertMapPointToView(_ point: CGPoint) -> CGPoint {
+        let scale = scrollView.zoomScale
+        let mapFrame = mapImageView.frame
         
-        let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.duration = 1.5
-        shapeLayer.add(animation, forKey: "drawPathAnimation")
+        let x = point.x * scale + mapFrame.origin.x
+        let y = point.y * scale + mapFrame.origin.y
         
-        scrollView.layer.addSublayer(shapeLayer)
-        pathLayer = shapeLayer
+        return CGPoint(x: x, y: y)
     }
     
     func updateMarkerAppearances() {
         for marker in locationMarkers {
             marker.markerHighlighted = false
+            marker.backgroundColor = marker.location.type.color
         }
         
         if let start = navigationManager.selectedStartLocation {
@@ -360,28 +401,46 @@ class MyMapViewController: UIViewController, UIScrollViewDelegate, LocationMarke
     
     func updateMarkerPositions() {
         let scale = scrollView.zoomScale
+        let mapFrame = mapImageView.frame
         
         for (index, marker) in locationMarkers.enumerated() {
             let location = navigationManager.locations[index]
             
             if currentRotationIndex != 0 {
                 let angle = rotationAngles[currentRotationIndex]
-                let centerX = scrollView.contentSize.width / 2
-                let centerY = scrollView.contentSize.height / 2
                 
-                let relativeX = location.coordinate.x - centerX
-                let relativeY = location.coordinate.y - centerY
+                let mapCenterX = mapFrame.origin.x + mapFrame.width / 2
+                let mapCenterY = mapFrame.origin.y + mapFrame.height / 2
+                
+                let originalX = location.coordinate.x * scale
+                let originalY = location.coordinate.y * scale
+            
+                let relativeX = originalX - mapFrame.width / 2
+                let relativeY = originalY - mapFrame.height / 2
                 
                 let rotatedX = relativeX * cos(angle) - relativeY * sin(angle)
                 let rotatedY = relativeX * sin(angle) + relativeY * cos(angle)
                 
-                let newX = rotatedX + centerX
-                let newY = rotatedY + centerY
+            
+                let newX = rotatedX + mapCenterX
+                let newY = rotatedY + mapCenterY
                 
-                marker.updatePosition(at: CGPoint(x: newX, y: newY), scale: scale)
+                marker.center = CGPoint(x: newX, y: newY)
             } else {
-                marker.updatePosition(at: location.coordinate, scale: scale)
+           
+                let x = location.coordinate.x * scale + mapFrame.origin.x
+                let y = location.coordinate.y * scale + mapFrame.origin.y
+                marker.center = CGPoint(x: x, y: y)
             }
+    
+            let markerScale = min(1.0, max(0.5, scale * 0.5))
+            marker.transform = CGAffineTransform(scaleX: markerScale, y: markerScale)
+        }
+        
+        if let pathSegments = navigationManager.findPath(),
+           navigationManager.selectedStartLocation != nil &&
+           navigationManager.selectedDestLocation != nil {
+            drawPath(pathSegments)
         }
     }
     
@@ -391,18 +450,15 @@ class MyMapViewController: UIViewController, UIScrollViewDelegate, LocationMarke
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
         centerImage()
-        
         updateMarkerPositions()
-        
-        if let pathSegments = navigationManager.findPath() {
-            drawPath(pathSegments)
-        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateMarkerPositions()
     }
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        if let pathSegments = navigationManager.findPath() {
-            drawPath(pathSegments)
-        }
+        updateMarkerPositions()
     }
     
     func centerImage() {

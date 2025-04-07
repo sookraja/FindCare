@@ -34,30 +34,33 @@ class NavigationManager: NSObject {
     
     func setupLocations() {
         locations = [
-        
+            // Top row
             Location(id: "emergency", name: "Emergency Room", roomNumber: "H101", type: .emergency,
                     coordinate: CGPoint(x: 127, y: 227)),
             Location(id: "icu", name: "Intensive Care Unit", roomNumber: "H102", type: .icu,
                     coordinate: CGPoint(x: 253, y: 227)),
             Location(id: "surgery", name: "Surgery", roomNumber: "H103", type: .surgery,
-                    coordinate: CGPoint(x: 379, y: 227)),
+                    coordinate: CGPoint(x: 300, y: 227)),
             Location(id: "imaging", name: "Imaging", roomNumber: "H104", type: .imaging,
                     coordinate: CGPoint(x: 505, y: 227)),
             
-
+            // Bottom row - corridor
             Location(id: "entrance", name: "Main Entrance", roomNumber: "H-E1", type: .entrance,
                     coordinate: CGPoint(x: 75, y: 280)),
             Location(id: "reception", name: "Reception", roomNumber: "H201", type: .reception,
-                    coordinate: CGPoint(x: 190, y: 280)),
+                    coordinate: CGPoint(x: 160, y: 280)),
+            
+            // Rooms off corridor
             Location(id: "pharmacy", name: "Pharmacy", roomNumber: "H202", type: .pharmacy,
-                    coordinate: CGPoint(x: 316, y: 280)),
+                    coordinate: CGPoint(x: 225, y: 280)),
+           
             Location(id: "cafeteria", name: "Cafeteria", roomNumber: "H203", type: .cafeteria,
-                    coordinate: CGPoint(x: 442, y: 280)),
+                    coordinate: CGPoint(x: 130, y: 280)),
+            
             Location(id: "exit", name: "Emergency Exit", roomNumber: "H-X1", type: .exit,
-                    coordinate: CGPoint(x: 568, y: 280))
+                    coordinate: CGPoint(x: 350, y: 260))
         ]
     }
-    
     func setStartLocation(_ location: Location) {
         selectedStartLocation = location
     }
@@ -76,46 +79,76 @@ class NavigationManager: NSObject {
             return nil
         }
         
-       
         var segments: [PathSegment] = []
         
-      
-        let needsCorridor = abs(start.coordinate.y - destination.coordinate.y) > 20
+        let startCorridorPoint = findNearestCorridorPoint(for: start)
+        let destCorridorPoint = findNearestCorridorPoint(for: destination)
         
-        if needsCorridor {
-
-            let corridorY: CGFloat = 253
-            let startToCorridorPoint = CGPoint(x: start.coordinate.x, y: corridorY)
+     
+        if start.coordinate != startCorridorPoint {
             segments.append(PathSegment(
                 from: start.coordinate,
-                to: startToCorridorPoint,
-                instruction: "Exit \(start.name) (\(start.roomNumber)) and head to the main corridor"
+                to: startCorridorPoint,
+                instruction: "Exit \(start.name) to the corridor"
+            ))
+        }
+        
+        if abs(startCorridorPoint.y - destCorridorPoint.y) > 20 {
+        
+            let verticalConnectionX: CGFloat = 300
+            
+            // 2a. From start corridor to vertical connection
+            let startVerticalPoint = CGPoint(x: verticalConnectionX, y: startCorridorPoint.y)
+            segments.append(PathSegment(
+                from: startCorridorPoint,
+                to: startVerticalPoint,
+                instruction: "Walk along the corridor to the stairs/elevator"
             ))
             
- 
-            let corridorToDestPoint = CGPoint(x: destination.coordinate.x, y: corridorY)
-            let direction = start.coordinate.x < destination.coordinate.x ? "right" : "left"
-                segments.append(PathSegment(
-                from: startToCorridorPoint,
-                to: corridorToDestPoint,
-                instruction: "Turn \(direction) and walk along the main corridor"
+            // 2b. Vertical connection - make it centered in the corridor
+            let destVerticalPoint = CGPoint(x: verticalConnectionX, y: destCorridorPoint.y)
+            segments.append(PathSegment(
+                from: startVerticalPoint,
+                to: destVerticalPoint,
+                instruction: "Take the stairs/elevator"
             ))
-                segments.append(PathSegment(
-                from: corridorToDestPoint,
-                to: destination.coordinate,
-                instruction: "Enter \(destination.name) (\(destination.roomNumber))"
+            
+            // 2c. From vertical connection to destination corridor point
+            segments.append(PathSegment(
+                from: destVerticalPoint,
+                to: destCorridorPoint,
+                instruction: "Walk along the corridor toward \(destination.name)"
             ))
-        } else {
-                segments.append(PathSegment(
-                from: start.coordinate,
+        }
+        // If on the same corridor, direct path along corridor
+        else if startCorridorPoint != destCorridorPoint {
+            segments.append(PathSegment(
+                from: startCorridorPoint,
+                to: destCorridorPoint,
+                instruction: "Walk along the corridor toward \(destination.name)"
+            ))
+        }
+        
+        // 3. Final segment: From destination corridor to destination location
+        if destCorridorPoint != destination.coordinate {
+            segments.append(PathSegment(
+                from: destCorridorPoint,
                 to: destination.coordinate,
-                instruction: "Walk directly from \(start.name) to \(destination.name)"
+                instruction: "Enter \(destination.name)"
             ))
         }
         
         return segments
     }
-    
+
+  
+    func findNearestCorridorPoint(for location: Location) -> CGPoint {
+        
+        let mainCorridorY: CGFloat = 255
+        
+       
+        return CGPoint(x: location.coordinate.x, y: mainCorridorY)
+    }
     func getNavigationInstructions() -> [String] {
         guard let start = selectedStartLocation,
               let destination = selectedDestLocation,
